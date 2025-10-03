@@ -13,11 +13,11 @@ Buat satu halaman statis baru bernama "Kontak".
 Halaman ini harus bisa diakses melalui URL /kontak.
 Isi halaman tersebut dengan informasi kontak fiktif (misal: email dan nomor telepon).
 Jangan lupa tambahkan link navigasi ke dan dari halaman "Kontak" di halaman lainnya.
-VSCODE HOME
+VSCODE HOME<br>
 <img width="569" height="256" alt="Screenshot 2025-10-03 141039" src="https://github.com/user-attachments/assets/99a1c9b9-3f42-4026-a769-82b868497e54" />
-VSCODE KONTAK
+VSCODE KONTAK<br>
 <img width="408" height="238" alt="Screenshot 2025-10-03 141050" src="https://github.com/user-attachments/assets/d752add3-4a4b-4645-b572-41b840b8eb0f" />
-VSCODE routes web.php
+VSCODE routes web.php<br>
 <img width="621" height="268" alt="Screenshot 2025-10-03 141108" src="https://github.com/user-attachments/assets/8622ed1d-2a6f-4ae0-9a5a-63d85206cd6c" />
 
 
