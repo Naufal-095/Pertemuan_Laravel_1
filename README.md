@@ -1,13 +1,13 @@
 Nama:Muhammad Naufal Dwiantomo
 NPM:4523210076
 #Pertemuan_Laravel_1
-#Bagian 1: Teori Singkat (5 Menit)
+##Bagian 1: Teori Singkat (5 Menit)
 Sebelum kita mengetik kode, mari pahami tiga alat utama yang akan kita gunakan hari ini:
 Laravel: Framework PHP yang akan menjadi "kerangka rumah" untuk aplikasi kita. Ia menyediakan banyak alat siap pakai agar kita bisa membangun aplikasi dengan cepat dan terstruktur.
 Composer: "Manajer Paket" untuk PHP. Tugasnya adalah mengunduh Laravel dan semua "pustaka" (library) lain yang dibutuhkan oleh Laravel agar bisa berjalan.
 Artisan: "Asisten pribadi" atau pisau Swiss Army bawaan Laravel. Ini adalah alat baris perintah (command-line tool) yang akan kita gunakan untuk banyak hal, salah satunya adalah untuk menyalakan server development lokal (php artisan serve).
 
-#Bagian 2: Langkah-Langkah Praktikum (75 Menit)
+###Bagian 2: Langkah-Langkah Praktikum (75 Menit)
 
 Langkah 1: Instalasi Proyek Laravel "LaraPress"
 Buka Terminal: Jalankan terminal Kita. Jika menggunakan Laragon, cara termudah adalah klik tombol "Terminal" di jendela Laragon. Ini akan membuka terminal di direktori yang tepat.
@@ -84,7 +84,7 @@ Di about.blade.php, tambahkan di bawah paragraf:
 <a href="/">Kembali ke Halaman Utama</a>
 Simpan dan coba klik link tersebut di browser.
 
-#Bagian 3: Tugas Mandiri (10 Menit)
+####Bagian 3: Tugas Mandiri (10 Menit)
 Untuk memastikan Kita memahami konsepnya, kerjakan tugas kecil berikut:
 Buat satu halaman statis baru bernama "Kontak".
 Halaman ini harus bisa diakses melalui URL /kontak.
@@ -98,7 +98,7 @@ VSCODE routes web.php
 <img width="621" height="268" alt="Screenshot 2025-10-03 141108" src="https://github.com/user-attachments/assets/8622ed1d-2a6f-4ae0-9a5a-63d85206cd6c" />
 
 
-#Bagian 4: Kesimpulan & Langkah Selanjutnya
+#####Bagian 4: Kesimpulan & Langkah Selanjutnya
 Pada pertemuan ini, kita telah berhasil:
 Menginstal proyek Laravel baru dari awal.
 Menjalankan server development lokal.
