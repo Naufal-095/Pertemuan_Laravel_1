@@ -1,61 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Nama:Muhammad Naufal Dwiantomo
+NPM:4523210076
+#Pertemuan_Laravel_1
+#Bagian 1: Teori Singkat (5 Menit)
+Sebelum kita mengetik kode, mari pahami tiga alat utama yang akan kita gunakan hari ini:
+Laravel: Framework PHP yang akan menjadi "kerangka rumah" untuk aplikasi kita. Ia menyediakan banyak alat siap pakai agar kita bisa membangun aplikasi dengan cepat dan terstruktur.
+Composer: "Manajer Paket" untuk PHP. Tugasnya adalah mengunduh Laravel dan semua "pustaka" (library) lain yang dibutuhkan oleh Laravel agar bisa berjalan.
+Artisan: "Asisten pribadi" atau pisau Swiss Army bawaan Laravel. Ini adalah alat baris perintah (command-line tool) yang akan kita gunakan untuk banyak hal, salah satunya adalah untuk menyalakan server development lokal (php artisan serve).
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+#Bagian 2: Langkah-Langkah Praktikum (75 Menit)
 
-## About Laravel
+Langkah 1: Instalasi Proyek Laravel "LaraPress"
+Buka Terminal: Jalankan terminal Kita. Jika menggunakan Laragon, cara termudah adalah klik tombol "Terminal" di jendela Laragon. Ini akan membuka terminal di direktori yang tepat.
+Navigasi ke Direktori Web: Pastikan Kita berada di dalam document root server lokal Kita. Untuk Laragon, itu adalah C:\laragon\www. Untuk XAMPP, C:\xampp\htdocs.
+Jalankan Perintah Instalasi: Ketik perintah berikut dan tekan Enter. Perintah ini akan menyuruh Composer untuk membuat proyek Laravel baru di dalam folder bernama LaraPress.
+composer create-project laravel/laravel LaraPress
+Proses ini akan memakan waktu beberapa menit karena Composer perlu mengunduh semua paket yang dibutuhkan. Pastikan koneksi internet Kita stabil.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Langkah 2: Menjalankan Aplikasi untuk Pertama Kali
+Masuk ke Folder Proyek: Setelah instalasi selesai, masuk ke direktori proyek yang baru dibuat.
+cd LaraPress
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Jalankan Server Artisan: Gunakan Artisan untuk menyalakan server development bawaan Laravel.
+php artisan serve
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Lihat Hasilnya: Terminal akan menampilkan alamat server lokal Kita, biasanya seperti ini: Server running on [http://127.0.0.1:8000].
+Buka web browser Kita, lalu kunjungi alamat http://127.0.0.1:8000. Kita akan disambut dengan halaman selamat datang Laravel. Selamat, aplikasi Laravel pertama Kita sudah berjalan!
 
-## Learning Laravel
+Langkah 3: Memahami Alur Kerja Pertama (Route -> View)
+Sekarang kita akan memodifikasi halaman selamat datang tersebut. Ini akan mengajarkan kita alur kerja paling dasar di Laravel.
+Buka Proyek di Code Editor: Buka seluruh folder LaraPress menggunakan VS Code atau editor pilihan Kita.
+Pahami Rute (The Map): Buka file routes/web.php. File ini adalah "peta" atau "daftar alamat" untuk aplikasi web kita. Kita akan melihat kode ini:
+use Illuminate\Support\Facades\Route;
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Route::get('/', function () {
+    return view('welcome');
+});
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Artinya: "Ketika seseorang mengunjungi URL utama (/) menggunakan metode GET, carilah dan tampilkan file view yang bernama welcome."
+Modifikasi Tampilan (The View):
+Sekarang, buka file view tersebut di resources/views/welcome.blade.php.
+Kita akan melihat banyak kode HTML. Untuk latihan, hapus semua isinya dan ganti dengan kode sederhana ini:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selamat Datang di LaraPress</title>
+</head>
+<body>
+    <h1>Selamat Datang di Blog LaraPress</h1>
+    <p>Ini adalah halaman utama dari aplikasi blog kita.</p>
+</body>
+</html>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Simpan & Refresh: Simpan file welcome.blade.php tersebut. Kembali ke browser Kita dan refresh halaman http://127.0.0.1:8000. Tampilan halaman sekarang seharusnya sudah berubah sesuai dengan kode HTML yang baru Kita tulis.
+Langkah 4: Membuat Halaman Statis Baru ("Tentang Kami")
+Sekarang kita akan menerapkan apa yang baru saja kita pelajari untuk membuat halaman baru dari nol.
+Buat Rute Baru:
+Kembali ke file routes/web.php.
+Di bawah rute yang sudah ada, tambahkan rute baru untuk halaman "Tentang Kami".
+Route::get('/tentang-kami', function () {
+    return view('about'); // Kita akan menampilkan view bernama 'about'
+});
 
-## Laravel Sponsors
+Buat File View Baru:
+Di dalam folder resources/views/, buat sebuah file baru bernama about.blade.php.
+Isi file tersebut dengan konten HTML sederhana:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tentang Kami - LaraPress</title>
+</head>
+<body>
+    <h1>Tentang LaraPress</h1>
+    <p>LaraPress adalah sebuah proyek blog sederhana yang dibuat untuk mempelajari dasar-dasar framework Laravel 12.</p>
+</body>
+</html>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Uji Coba Halaman Baru: Simpan semua file. Buka browser Kita dan kunjungi URL baru: http://127.0.0.1:8000/tentang-kami. Halaman "Tentang Kami" seharusnya sudah muncul!
+Menambahkan Link Navigasi:
+Agar pengguna bisa berpindah halaman, tambahkan link di kedua file view Kita.
+Di welcome.blade.php, tambahkan di bawah paragraf:
+<a href="/tentang-kami">Lihat Halaman Tentang Kami</a>
+Di about.blade.php, tambahkan di bawah paragraf:
+<a href="/">Kembali ke Halaman Utama</a>
+Simpan dan coba klik link tersebut di browser.
 
-### Premium Partners
+#Bagian 3: Tugas Mandiri (10 Menit)
+Untuk memastikan Kita memahami konsepnya, kerjakan tugas kecil berikut:
+Buat satu halaman statis baru bernama "Kontak".
+Halaman ini harus bisa diakses melalui URL /kontak.
+Isi halaman tersebut dengan informasi kontak fiktif (misal: email dan nomor telepon).
+Jangan lupa tambahkan link navigasi ke dan dari halaman "Kontak" di halaman lainnya.
+VSCODE HOME
+<img width="569" height="256" alt="Screenshot 2025-10-03 141039" src="https://github.com/user-attachments/assets/99a1c9b9-3f42-4026-a769-82b868497e54" />
+VSCODE KONTAK
+<img width="408" height="238" alt="Screenshot 2025-10-03 141050" src="https://github.com/user-attachments/assets/d752add3-4a4b-4645-b572-41b840b8eb0f" />
+VSCODE routes web.php
+<img width="621" height="268" alt="Screenshot 2025-10-03 141108" src="https://github.com/user-attachments/assets/8622ed1d-2a6f-4ae0-9a5a-63d85206cd6c" />
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#Bagian 4: Kesimpulan & Langkah Selanjutnya
+Pada pertemuan ini, kita telah berhasil:
+Menginstal proyek Laravel baru dari awal.
+Menjalankan server development lokal.
+Membuat halaman statis dengan mendefinisikan Route dan membuat file View.
